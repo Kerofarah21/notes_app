@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/custom_search_button.dart';
 import 'widgets/notes_view_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -8,16 +7,10 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Notes',
-        ),
-        actions: const [
-          CustomSearchButton(),
-        ],
+    return const SafeArea(
+      child: Scaffold(
+        body: NotesViewBody(),
       ),
-      body: const NotesViewBody(),
     );
   }
 }
