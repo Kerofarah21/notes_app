@@ -7,9 +7,9 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
-      child: Scaffold(
-        body: NotesViewBody(),
+    return const Scaffold(
+      body: SafeArea(
+        child: NotesViewBody(),
       ),
     );
   }
