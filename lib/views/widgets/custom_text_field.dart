@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.hintColor,
+    this.maxLines,
     this.border,
     this.enabledBorder,
     this.focusedBorder,
@@ -23,6 +24,7 @@ class CustomTextField extends StatelessWidget {
 
   final String hintText;
   final Color? hintColor;
+  final int? maxLines;
   final InputBorder? border;
   final InputBorder? enabledBorder;
   final InputBorder? focusedBorder;
@@ -52,6 +54,7 @@ class CustomTextField extends StatelessWidget {
       style: TextStyle(
         color: textColor,
       ),
+      maxLines: maxLines ?? 1,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
       obscureText: obscure ?? false,
