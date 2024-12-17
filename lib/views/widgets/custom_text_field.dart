@@ -50,7 +50,7 @@ class CustomTextField extends StatelessWidget {
         suffixIcon: suffixIcon,
       ),
       style: TextStyle(
-        color: textColor ?? Colors.black,
+        color: textColor,
       ),
       keyboardType: keyboardType,
       textInputAction: textInputAction,
