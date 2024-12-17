@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
 import 'widgets/add_note_bottom_sheet.dart';
 import 'widgets/notes_view_body.dart';
 
@@ -19,10 +20,10 @@ class NotesView extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
             ),
             context: context,
-            builder: (context) => const AddNoteBottomSheet(),
+            builder: (context) => AddNoteBottomSheet(),
           );
         },
-        backgroundColor: Colors.blue,
+        backgroundColor: kPrimaryColor,
         child: const Icon(
           Icons.add,
           color: Colors.black,
