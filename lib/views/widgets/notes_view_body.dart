@@ -13,7 +13,10 @@ class NotesViewBody extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: CustomAppBar(),
+            child: CustomAppBar(
+              title: 'Notes',
+              icon: Icons.search,
+            ),
           ),
           NotesListView(),
           SliverToBoxAdapter(
