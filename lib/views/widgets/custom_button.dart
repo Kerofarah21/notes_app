@@ -6,12 +6,14 @@ class CustomButton extends StatelessWidget {
     required this.text,
     this.textColor,
     this.buttonColor,
+    required this.isLoading,
     required this.onTap,
   });
 
   final String text;
   final Color? textColor;
   final Color? buttonColor;
+  final bool isLoading;
   final Function() onTap;
 
   @override
@@ -26,14 +28,22 @@ class CustomButton extends StatelessWidget {
         width: double.infinity,
         height: 55,
         child: Center(
-          child: Text(
-            text,
-            style: TextStyle(
-              color: textColor ?? Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          child: isLoading
+              ? const SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: CircularProgressIndicator(
+                    color: Colors.black,
+                  ),
+                )
+              : Text(
+                  text,
+                  style: TextStyle(
+                    color: textColor ?? Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
         ),
       ),
     );
