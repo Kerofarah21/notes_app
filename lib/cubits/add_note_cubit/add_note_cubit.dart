@@ -10,6 +10,8 @@ part 'add_note_state.dart';
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
 
+  static AddNoteCubit get(context) => BlocProvider.of(context);
+
   Future<void> addNote(Note note) async {
     emit(AddNoteLoading());
     try {

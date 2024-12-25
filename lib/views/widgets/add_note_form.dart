@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../constants.dart';
+import '../../cubits/add_note_cubit/add_note_cubit.dart';
+import '../../models/note.dart';
 import 'custom_button.dart';
 import 'custom_text_field.dart';
 
@@ -69,6 +71,14 @@ class _AddNoteFormState extends State<AddNoteForm> {
             onTap: () {
               if (formKey.currentState!.validate()) {
                 formKey.currentState!.save();
+                AddNoteCubit.get(context).addNote(
+                  Note(
+                    title: titleController.text,
+                    subTitle: contentController.text,
+                    date: DateTime.now().toString(),
+                    color: Colors.blue.r,
+                  ),
+                );
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
