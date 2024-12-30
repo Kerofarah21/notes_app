@@ -20,14 +20,16 @@ class NoteAdapter extends TypeAdapter<Note> {
       title: fields[0] as String,
       subTitle: fields[1] as String,
       date: fields[2] as String,
-      color: fields[3] as double,
+      colorRedValue: fields[3] as double,
+      colorGreenValue: fields[4] as double,
+      colorBlueValue: fields[5] as double,
     );
   }
 
   @override
   void write(BinaryWriter writer, Note obj) {
     writer
-      ..writeByte(4)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.title)
       ..writeByte(1)
@@ -35,7 +37,11 @@ class NoteAdapter extends TypeAdapter<Note> {
       ..writeByte(2)
       ..write(obj.date)
       ..writeByte(3)
-      ..write(obj.color);
+      ..write(obj.colorRedValue)
+      ..writeByte(4)
+      ..write(obj.colorGreenValue)
+      ..writeByte(5)
+      ..write(obj.colorBlueValue);
   }
 
   @override

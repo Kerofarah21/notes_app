@@ -82,8 +82,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
                       Note(
                         title: titleController.text,
                         subTitle: contentController.text,
-                        date: DateFormat('dd-mm-yyyy').format(DateTime.now()),
-                        color: Colors.blue.r,
+                        date: DateFormat('dd-MM-yyyy').format(DateTime.now()),
+                        colorRedValue: Colors.blue.r,
+                        colorGreenValue: Colors.blue.g,
+                        colorBlueValue: Colors.blue.b,
                       ),
                     );
                   } else {
