@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../cubits/notes_cubit/notes_cubit.dart';
 import '../../models/note.dart';
 import '../edit_note_view.dart';
 
@@ -65,6 +66,7 @@ class NoteItem extends StatelessWidget {
                   padding: const EdgeInsetsDirectional.only(end: 16),
                   onPressed: () {
                     note.delete();
+                    NotesCubit.get(context).getNotes();
                   },
                   icon: const Icon(
                     Icons.delete,

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'constants.dart';
+import 'cubits/notes_cubit/notes_cubit.dart';
 import 'models/note.dart';
 import 'services/bloc_observer.dart';
 import 'views/notes_view.dart';
@@ -22,18 +23,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Notes',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          brightness: Brightness.dark,
-          seedColor: kPrimaryColor,
+    return BlocProvider(
+      create: (context) => NotesCubit()..getNotes(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Notes',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+            brightness: Brightness.dark,
+            seedColor: kPrimaryColor,
+          ),
+          useMaterial3: true,
+          fontFamily: 'Poppins',
         ),
-        useMaterial3: true,
-        fontFamily: 'Poppins',
+        home: const NotesView(),
       ),
-      home: const NotesView(),
     );
   }
 }
