@@ -12,11 +12,11 @@ class NotesCubit extends Cubit<NotesState> {
 
   static NotesCubit get(context) => BlocProvider.of(context);
 
+  List<Note>? notes;
+
   void getNotes() {
-    try {
-      emit(NotesSuccess(Hive.box<Note>(kNotesBox).values.toList()));
-    } catch (e) {
-      emit(NotesFailure(e.toString()));
-    }
+    Hive.box<Note>(kNotesBox).clear();
+    notes = Hive.box<Note>(kNotesBox).values.toList();
+    emit(NotesSuccess());
   }
 }
