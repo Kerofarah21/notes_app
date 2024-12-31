@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import '../../constants.dart';
 import '../../cubits/add_note_cubit/add_note_cubit.dart';
 import '../../models/note.dart';
+import 'colors_list_view.dart';
 import 'custom_button.dart';
 import 'custom_text_field.dart';
 
@@ -66,6 +67,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
               }
             },
           ),
+          const SizedBox(
+            height: 32,
+          ),
+          const ColorsListView(),
           const SizedBox(
             height: 32,
           ),
