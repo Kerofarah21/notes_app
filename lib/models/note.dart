@@ -11,11 +11,11 @@ class Note extends HiveObject {
   @HiveField(2)
   final String date;
   @HiveField(3)
-  final double colorRedValue;
+  double colorRedValue;
   @HiveField(4)
-  final double colorGreenValue;
+  double colorGreenValue;
   @HiveField(5)
-  final double colorBlueValue;
+  double colorBlueValue;
 
   Note({
     required this.title,

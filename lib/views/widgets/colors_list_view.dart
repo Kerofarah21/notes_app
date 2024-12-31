@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../cubits/add_note_cubit/add_note_cubit.dart';
 import 'color_item.dart';
 
 class ColorsListView extends StatefulWidget {
@@ -33,6 +34,9 @@ class _ColorsListViewState extends State<ColorsListView> {
           onTap: () {
             setState(() {
               currentIndex = index;
+              AddNoteCubit.get(context).redValue = colors[index].r;
+              AddNoteCubit.get(context).greenValue = colors[index].g;
+              AddNoteCubit.get(context).blueValue = colors[index].b;
             });
           },
           child: ColorItem(

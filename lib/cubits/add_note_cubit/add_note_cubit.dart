@@ -12,7 +12,15 @@ class AddNoteCubit extends Cubit<AddNoteState> {
 
   static AddNoteCubit get(context) => BlocProvider.of(context);
 
+  double redValue = const Color(0xff7FB7BE).r;
+  double greenValue = const Color(0xff7FB7BE).g;
+  double blueValue = const Color(0xff7FB7BE).b;
+
   Future<void> addNote(Note note) async {
+    note.colorRedValue = redValue;
+    note.colorGreenValue = greenValue;
+    note.colorBlueValue = blueValue;
+
     emit(AddNoteLoading());
     try {
       await Hive.box<Note>(kNotesBox).add(note);
