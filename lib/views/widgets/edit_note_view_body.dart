@@ -5,6 +5,7 @@ import '../../cubits/notes_cubit/notes_cubit.dart';
 import '../../models/note.dart';
 import 'custom_app_bar.dart';
 import 'custom_text_field.dart';
+import 'edit_note_colors_list.dart';
 
 class EditNoteViewBody extends StatelessWidget {
   EditNoteViewBody({
@@ -62,6 +63,12 @@ class EditNoteViewBody extends StatelessWidget {
                   keyboardType: TextInputType.text,
                   textInputAction: TextInputAction.done,
                   controller: contentController,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                EditNoteColorsList(
+                  note: note,
                 ),
               ],
             ),
